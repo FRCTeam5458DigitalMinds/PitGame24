@@ -77,7 +77,15 @@ def show_user_name():
         #image = pygame.image.load(cwd + "\\images\\menu10.png")
         #image = pygame.transform.scale(image,(WIDTH, HEIGHT))
         SCREEN.blit(image, (0, 0))
-        
+        person = {
+            "initial": var.initial,
+            "team": var.team,
+            "points": 0
+        }
+        with open(cwd + "\\dat\\currentPerson.pkl", "wb") as f:
+            f.truncate(0)
+            pickle.dump(person, f)
+                
         clock.tick(60)
         pygame.display.update()
         subprocess.run(["python", cwd + "\\src\\menu.py"])

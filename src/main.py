@@ -463,5 +463,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-subprocess.run(["python", cwd + "\\src\\sort10.py"])
 pygame.quit()
